@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Subject</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/take.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #007bff;
+            --primary-dark: #0056b3;
+            --secondary: #2c3e50;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            line-height: 1.6;
+            background: url('../images/photo-1562774053-701939374585.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(44, 62, 80, 0.85);
+            z-index: -1;
+        }
+
+        .subject-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .subject-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .subject-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .subject-details {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .subject-instructor {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .back-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .back-btn i {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="subject-container">
+        <div class="subject-box">
+            <h1 class="subject-title">{{ subject[1] }} - {{ subject[0] }}</h1>
+            <div class="subject-details">
+                <p><strong>Credits:</strong> {{ subject[2] }}</p>
+                <p><strong>Schedule:</strong> {{ subject[3] }}</p>
+                <p><strong>Instructor:</strong> {{ instructor_name }}</p>
+            </div>
+            <div class="subject-description">
+                <p>The hum of focused energy fills the physics lab as Mr. Chen demonstrates the principles of electromagnetism. Wires snake across the table, connecting batteries, coils, and a small, spinning motor. His hands, precise and deliberate, manipulate the equipment, his voice a steady rhythm explaining the invisible forces at play. He doesn't just show; he invites students to participate, to experiment, to witness the elegant dance of electrons and magnetic fields. He encourages them to question, to hypothesize, to grapple with the seemingly abstract concepts until they become tangible realities. A student, initially intimidated by the complex equations scrawled on the whiteboard, finds their eyes widening as the motor spins, a physical manifestation of the theories they've been studying. Mr. Chen's patience, his ability to break down complex ideas into digestible pieces, and his genuine excitement for the subject, create an environment where learning isn't a chore, but an adventure. He emphasizes the interconnectedness of scientific disciplines, showing how physics isn't isolated, but a foundation for understanding the universe itself. This kind of teaching transcends the mere transmission of information; it's about fostering a sense of wonder, cultivating problem-solving skills, and inspiring a lifelong appreciation for the beauty and power of scientific inquiry. The impact extends beyond the lab, equipping students with the tools to analyze, innovate, and contribute to a world increasingly shaped by science and technology. It's a testament to the profound and lasting impact of a teacher who ignites the flame of scientific curiosity.</p>
+                
+                <p>Imagine a classroom, sunlight filtering through the windows, illuminating motes of dust dancing in the air. At the front, Ms. Evans, her eyes sparkling with enthusiasm, is weaving a tapestry of history, not merely reciting dates and names, but breathing life into the past. She paints vivid pictures of ancient civilizations, tracing the rise and fall of empires, and highlighting the human stories that shaped our world. Her voice, a melodic blend of passion and clarity, guides students through the complexities of political landscapes, the intricacies of philosophical thought, and the poignant beauty of artistic expression. She pauses, inviting questions, fostering a dialogue where curiosity is celebrated and critical thinking is nurtured. A student, initially hesitant, raises their hand, and Ms. Evans's face lights up, signaling that the spark of intellectual engagement has been ignited. This is the essence of teaching, a profound act of sharing knowledge, igniting curiosity, and empowering minds. It's more than just imparting facts; it's about cultivating a love for learning, fostering critical thinking, and equipping students with the tools to navigate the world with understanding and empathy. It's a transformative process, where a teacher's dedication can shape not only academic success but also the very fabric of a student's character, creating lifelong learners and informed citizens. That is why a good teacher is such a vital asset to society.</p>
+            </div>
+            <button class="back-btn" onclick="window.location.href='{{ url_for('faculty_subjects') }}'">
+                <i class="fas fa-arrow-left"></i> Back to Subjects
+            </button>
+        </div>
+    </div>
+</body>
+</html>
