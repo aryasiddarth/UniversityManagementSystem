@@ -22,3 +22,4 @@ The **University Management System** is a web-based application built with **Fla
 
 ## Note
 - **scms.db** contains a sample database
+- run app.py to start
